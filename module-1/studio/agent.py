@@ -34,7 +34,33 @@ def divide(a: int, b: int) -> float:
 tools = [add, multiply, divide]
 
 # Define LLM with bound tools
-llm = ChatOpenAI(model="gpt-4o")
+# llm = ChatOpenAI(model="gpt-4o")
+import os
+from dotenv import load_dotenv
+
+# 指定 .env 文件路径
+env_path = r'C:\GitRepo\langchain-academy\module-1\.env'
+
+# 加载 .env 文件
+load_dotenv(dotenv_path=env_path)
+print(f"The AZURE_OPENAI_ENDPOINT is: {os.getenv('AZURE_OPENAI_ENDPOINT')}")
+
+# os.environ["LANGSMITH_PROJECT"] = "langchain-academy-02"
+
+from langchain_openai import AzureChatOpenAI
+
+llm = AzureChatOpenAI(
+    azure_deployment=os.getenv('AZURE_OPENAI_DEPLOYMENT'),
+    api_version=os.getenv('AZURE_OPENAI_API_VERSION'),
+    temperature=0,
+    max_tokens=None,
+    timeout=None,
+    max_retries=2,
+)
+
+
+
+
 llm_with_tools = llm.bind_tools(tools)
 
 # System message

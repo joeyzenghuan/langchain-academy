@@ -135,6 +135,11 @@ env.bak/
 venv.bak/
 lc-academy-env/
 
+*.bin
+*.pkl
+*.pckl
+*.sqlite3
+
 # Spyder project settings
 .spyderproject
 .spyproject
