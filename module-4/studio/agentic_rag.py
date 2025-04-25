@@ -43,7 +43,8 @@ from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # 本地向量存储的路径
-persist_directory = r"C:\GitRepo\langchain-academy\module-4\agentic-rag\db\chroma_db_azure_docs"
+# persist_directory = r"C:\GitRepo\langchain-academy\module-4\agentic-rag\db\chroma_db_azure_docs"
+persist_directory = "../agentic-rag/db/chroma_db_azure_docs"
 
 vectorstore_force_update = False
 
