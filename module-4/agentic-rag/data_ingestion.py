@@ -4,11 +4,14 @@ from dotenv import load_dotenv
 
 # 指定 .env 文件路径
 # env_path = r'C:\GitRepo\langchain-academy\module-1\.env'
-env_path = '../sutdio/.env'
+env_path = '../studio/.env'
 
+# env_path = r'C:\GitRepo\langchain-academy\module-4\studio\.env'
 # 加载 .env 文件
 load_dotenv(dotenv_path=env_path)
 print(f"The AZURE_OPENAI_ENDPOINT is: {os.getenv('AZURE_OPENAI_ENDPOINT')}")
+
+
 
 os.environ["LANGSMITH_PROJECT"] = "langchain-academy-agentic-rag"
 
@@ -58,7 +61,7 @@ doc_splits
 #     embedding=azure_openai_embeddings,
 # )
 
-persist_directory = "db\chroma_db_azure_docs"
+persist_directory = "db\chroma_db_azure_docs_2"
 # 创建新的向量存储并保存到本地
 vectorstore = Chroma.from_documents(
     documents=doc_splits,
