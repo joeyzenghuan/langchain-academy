@@ -57,6 +57,7 @@ if os.path.exists(persist_directory) and os.path.isdir(persist_directory) and le
         embedding_function=azure_openai_embeddings,
         collection_name="rag-chroma-azure-docs-markdown"
     )
+    print("本地向量存储已加载")
 else:
     print("本地向量存储不存在，创建新的向量存储...")
     urls = [
