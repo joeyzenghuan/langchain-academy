@@ -61,7 +61,7 @@ doc_splits
 #     embedding=azure_openai_embeddings,
 # )
 
-persist_directory = "db\chroma_db_azure_docs_2"
+persist_directory = "db/chroma_db_azure_docs"
 # 创建新的向量存储并保存到本地
 vectorstore = Chroma.from_documents(
     documents=doc_splits,
