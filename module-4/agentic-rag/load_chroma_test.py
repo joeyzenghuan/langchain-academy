@@ -43,7 +43,9 @@ azure_openai_embeddings = AzureOpenAIEmbeddings(
 
 
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.vectorstores import Chroma
+# from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # docs_list = [item for sublist in docs for item in sublist]
@@ -61,7 +63,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 #     embedding=azure_openai_embeddings,
 # )
 
-persist_directory = "db/chroma_db_azure_docs"
+persist_directory = "db/chroma_db_azure_docs_new"
 # 创建新的向量存储并保存到本地
 # vectorstore = Chroma.from_documents(
 #     documents=doc_splits,

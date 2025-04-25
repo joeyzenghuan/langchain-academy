@@ -38,13 +38,14 @@ azure_openai_embeddings = AzureOpenAIEmbeddings(
 
 
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_community.vectorstores import Chroma
+# from langchain_community.vectorstores import Chroma
+from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 # 本地向量存储的路径
 # persist_directory = r"C:\GitRepo\langchain-academy\module-4\agentic-rag\db\chroma_db_azure_docs"
-persist_directory = "../agentic-rag/db/chroma_db_azure_docs"
+persist_directory = "../agentic-rag/db/chroma_db_azure_docs_new"
 
 vectorstore_force_update = False
 
