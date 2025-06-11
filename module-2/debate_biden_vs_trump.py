@@ -22,6 +22,7 @@ llm = AzureChatOpenAI(
 
 # Define state
 from langgraph.graph import MessagesState
+
 class DebateState(MessagesState):
     current_speaker: str
     round: int

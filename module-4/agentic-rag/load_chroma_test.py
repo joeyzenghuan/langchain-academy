@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 # 指定 .env 文件路径
 # env_path = r'C:\GitRepo\langchain-academy\module-1\.env'
-env_path = '../studio/.env'
+env_path = '.env'
 
 # env_path = r'C:\GitRepo\langchain-academy\module-4\studio\.env'
 # 加载 .env 文件
@@ -63,7 +63,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 #     embedding=azure_openai_embeddings,
 # )
 
-persist_directory = "db/chroma_db_azure_docs_new"
+persist_directory = "db/chroma_db_azure_docs_rag"
 # 创建新的向量存储并保存到本地
 # vectorstore = Chroma.from_documents(
 #     documents=doc_splits,
@@ -80,7 +80,7 @@ persist_directory = "db/chroma_db_azure_docs_new"
 vectorstore = Chroma(
     persist_directory=persist_directory,
     embedding_function=azure_openai_embeddings,
-    collection_name="rag-chroma-azure-docs-markdown"
+    collection_name="chroma_db_azure_docs_rag_collection"
 )
 
 print(vectorstore.similarity_search("What is the difference between Azure OpenAI and Azure Cognitive Services?"))
